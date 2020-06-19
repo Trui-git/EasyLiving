@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditBillsActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:id="@+id/billName"/>
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:id="@+id/billDueDate"/>
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:id="@+id/billAmount"/>
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:id="@+id/billFreq"/>
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:id="@+id/billCompany"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Bill"
+            android:id="@+id/update_button"
+            android:onClick="UpdateBill"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Bill"
+            android:id="@+id/delete_button"
+            android:onClick="DeleteBill"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

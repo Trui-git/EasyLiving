@@ -2,6 +2,8 @@ package com.example.EasyLiving;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -20,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -123,8 +124,11 @@ public class BillsActivity extends AppCompatActivity {
     } // PayBill()
 
     public void EditBill(View v) {
-        // todon't
-        // intent - to edit page
+        String idx = selID;
+        Intent billEditPage = new Intent(BillsActivity.this,
+                EditBillsActivity.class);
+        billEditPage.putExtra("sellID", selID);
+        startActivity(billEditPage);
     } // EditBill()
 
     public void GetBills() {
@@ -139,7 +143,7 @@ public class BillsActivity extends AppCompatActivity {
                 "            CAST(julianday(dueDate) - julianday('now') AS INTEGER) || ' days' AS 'Days until Due:'\n" +
                 "        FROM tblBill\n" +
                 "        WHERE\n" +
-                "            julianday(dueDate) - julianday('now') < 15", null);
+                "            julianday(dueDate) - julianday('now') < 150 AND status = 'A'", null);
 
         if(c != null) {
             if(c.moveToFirst()) {

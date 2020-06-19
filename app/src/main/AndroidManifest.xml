@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.EasyLiving.MedicineActivity"></activity>
-        <activity android:name="com.example.EasyLiving.TodoActivity" />
-        <activity android:name="com.example.EasyLiving.CartActivity" />
-        <activity android:name="com.example.EasyLiving.BillsActivity" />
-        <activity android:name="com.example.EasyLiving.MainActivity">
+        <activity android:name=".EditBillsActivity"></activity>
+        <activity android:name=".MedicineActivity" />
+        <activity android:name=".TodoActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".BillsActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
