@@ -94,6 +94,14 @@ public class BillsActivity extends AppCompatActivity {
 
     } // onCreate()
 
+    @Override
+    // go back last page and refresh list view
+    public void onBackPressed() {
+        Intent mainActivePage = new Intent(BillsActivity.this,
+                MainActivity.class);
+        startActivity(mainActivePage);
+    }
+
     private AdapterView.OnItemClickListener mItemClicked =
         new AdapterView.OnItemClickListener() {
             @Override
@@ -135,6 +143,11 @@ public class BillsActivity extends AppCompatActivity {
         db.execSQL("UPDATE tblBill SET dueDate = '" + newDate + "' WHERE billID = " + itemIDs.get(idx) + "");
 
         db.close(); // close the door, we don't live in a barn!
+
+        // update bill page  after bll paid
+        Intent billPage = new Intent(BillsActivity.this,
+                BillsActivity.class);
+        startActivity(billPage);
     } // PayBill()
 
     public void EditBill(View v) {
