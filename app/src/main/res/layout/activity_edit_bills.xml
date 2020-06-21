@@ -199,7 +199,7 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/add_bill"
-                android:id="@+id/add_button"
+                android:id="@+id/add_bill_button"
                 android:onClick="AddBill"/>
         </LinearLayout>
     </LinearLayout>

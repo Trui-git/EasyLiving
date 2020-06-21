@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -40,6 +41,17 @@ public class EditBillsActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
             sellID = extras.getString("sellID");
+            if ((sellID!= null) && sellID.equals("AddBill")){
+                Button update_button = findViewById(R.id.update_button);
+                Button delete_button = findViewById(R.id.delete_button);
+                update_button.setEnabled(false);
+                delete_button.setEnabled(false);
+                sellID = null;
+            }
+            else{
+                Button add_bill_button = findViewById(R.id.add_bill_button);
+                add_bill_button.setEnabled(false);
+            }
         }
 
         billName = findViewById(R.id.billName);

@@ -41,6 +41,7 @@ public class BillsActivity extends AppCompatActivity {
 
     private Button pay_button;
     private Button edit_button;
+    private Button add_button;
     private String selID;
 
     @Override
@@ -82,6 +83,8 @@ public class BillsActivity extends AppCompatActivity {
         };
         pay_button = findViewById(R.id.pay_button);
         edit_button = findViewById(R.id.edit_button);
+        add_button = findViewById(R.id.add_button);
+        add_button.setEnabled(true);
         ListView items_list = findViewById(R.id.items_list);
         items_list.setAdapter((items_adapter));
         // Create a click handler
@@ -157,6 +160,13 @@ public class BillsActivity extends AppCompatActivity {
         billEditPage.putExtra("sellID", selID);
         startActivity(billEditPage);
     } // EditBill()
+
+    public void AddBill(View v) {
+        Intent billEditPage = new Intent(BillsActivity.this,
+                EditBillsActivity.class);
+        billEditPage.putExtra("sellID", "AddBill");
+        startActivity(billEditPage);
+    } // AddBill()
 
     public void GetBills() {
         String curItem;

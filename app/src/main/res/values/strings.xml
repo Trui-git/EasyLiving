@@ -11,6 +11,7 @@
     <string name="bill_company">Bill Company</string>
     <string name="edit_item">Edit Item</string>
     <string name="pay_now">Pay Now</string>
+    <string name="add_item">Add Item</string>
 
 
 </resources>
