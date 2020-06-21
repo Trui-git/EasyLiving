@@ -4,4 +4,5 @@
     <dimen name="big_button">130dp</dimen>
     <dimen name="small_margin">16dp</dimen>
     <dimen name="margin">20dp</dimen>
+    <dimen name="padding_start">8dp</dimen>
 </resources>

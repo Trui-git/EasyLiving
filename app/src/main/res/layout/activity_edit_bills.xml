@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,39 +11,196 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <EditText
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:id="@+id/billName"/>
-        <EditText
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:id="@+id/billDueDate"/>
-        <EditText
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:id="@+id/billAmount"/>
-        <EditText
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:id="@+id/billFreq"/>
-        <EditText
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:id="@+id/billCompany"/>
-
-        <Button
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update Bill"
-            android:id="@+id/update_button"
-            android:onClick="UpdateBill"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete Bill"
-            android:id="@+id/delete_button"
-            android:onClick="DeleteBill"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
 
+            <EditText
+                android:id="@+id/billName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:hint="@string/bill_name"
+                android:autofillHints="" />
+
+            <TextView
+                android:id="@+id/billName_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/bill_name"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/billDueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="date"
+
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:hint="@string/due_date"
+                android:autofillHints="@string/due_date"/>
+
+            <TextView
+                android:id="@+id/billDueDate_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/due_date" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/billAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/bill_amount"
+                android:ems="10"
+
+                android:hint="@string/bill_amount"
+                android:inputType="text"
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/billAmount_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/bill_amount" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/billFreq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:hint="@string/bill_frequency"
+                android:autofillHints="" />
+
+            <TextView
+                android:id="@+id/billFreq_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/bill_frequency" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/billCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/bill_company"
+                android:inputType="text"
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/billCompany_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/bill_company" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/update_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:onClick="UpdateBill"
+                android:text="@string/update_bill" />
+            <Button style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/clear_bill"
+                android:id="@+id/clear_button"
+                android:onClick="ClearBill"/>
+            <Button style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_bill"
+                android:id="@+id/delete_button"
+                android:onClick="DeleteBill"/>
+            <Button style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/add_bill"
+                android:id="@+id/add_button"
+                android:onClick="AddBill"/>
+        </LinearLayout>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

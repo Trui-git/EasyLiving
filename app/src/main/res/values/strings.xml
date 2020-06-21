@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">EasyLiving</string>
+    <string name="update_bill">Update Bill</string>
+    <string name="delete_bill">Delete Bill</string>
+    <string name="add_bill">Add Bill</string>
+    <string name="clear_bill">Clear Bill</string>
+    <string name="bill_name">Bill Name</string>
+    <string name="due_date">Due Date</string>
+    <string name="bill_amount">Bill Amount</string>
+    <string name="bill_frequency">Bill Frequency</string>
+    <string name="bill_company">Bill Company</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="pay_now">Pay Now</string>
+
+
 </resources>

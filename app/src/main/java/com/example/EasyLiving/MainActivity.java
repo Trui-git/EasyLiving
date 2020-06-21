@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 "'weekly', 'Telus', 'A')");
         db.execSQL("INSERT INTO tblBill VALUES(?1, 'Jellybean Club', '2020-06-25', 399.99, " +
                 "'weekly', 'JellyBeanClub.com', 'A')");
-*/
 
+*/
 
 
     }
