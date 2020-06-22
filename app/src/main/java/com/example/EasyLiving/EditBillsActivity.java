@@ -50,7 +50,7 @@ public class EditBillsActivity extends AppCompatActivity {
             }
             else{
                 Button add_bill_button = findViewById(R.id.add_bill_button);
-                add_bill_button.setEnabled(false);
+                //add_bill_button.setEnabled(false);
             }
         }
 

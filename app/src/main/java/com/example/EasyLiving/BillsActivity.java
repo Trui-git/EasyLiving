@@ -60,9 +60,9 @@ public class BillsActivity extends AppCompatActivity {
                 TextView item = (TextView)view;
                 if(position %2 == 1) {
                     // Set a background color for ListView regular row/item
-                    view.setBackgroundColor(Color.parseColor("#FFF4EEED"));
+                    view.setBackgroundColor(Color.parseColor("#FFCAC4C4"));
                     // Set the item text color
-                    item.setTextColor(Color.parseColor("#FF3E80F1"));
+                    item.setTextColor(Color.parseColor("#FF211E1E"));
                     // Set the item text style to bold
                     item.setTypeface(item.getTypeface(), Typeface.BOLD);
                     // Change the item text size
@@ -70,9 +70,10 @@ public class BillsActivity extends AppCompatActivity {
                 }
                 else {
                     // Set the background color for alternate row/item
-                    view.setBackgroundColor(Color.parseColor("#FFD9CDCA"));
+                    view.setBackgroundColor(Color.parseColor("#FFFAF7F7"));
                     // Set the item text color
-                    item.setTextColor(Color.parseColor("#FFD17057"));
+                    //item.setTextColor(Color.parseColor("#FFD17057"));
+                    item.setTextColor(Color.parseColor("#FF211E1E"));
                     // Set the item text style to bold
                     item.setTypeface(item.getTypeface(), Typeface.BOLD);
                     // Change the item text size
@@ -114,7 +115,7 @@ public class BillsActivity extends AppCompatActivity {
 
                 // flash button t warn user
                 Animation mAnimation = new AlphaAnimation(1, 0);
-                mAnimation.setDuration(200);
+                mAnimation.setDuration(500);
                 mAnimation.setInterpolator(new LinearInterpolator());
                 mAnimation.setRepeatCount(Animation.RELATIVE_TO_PARENT);
                 mAnimation.setRepeatMode(Animation.REVERSE);
