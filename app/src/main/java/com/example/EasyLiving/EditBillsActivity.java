@@ -15,6 +15,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -146,9 +148,13 @@ public class EditBillsActivity extends AppCompatActivity {
                 "company = '" + billCompany.getText().toString() + "' " +
                 "WHERE billID = " + sellID + "");
 
-        Toast.makeText(this, "bill updated!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "bill updated!", Toast.LENGTH_SHORT).show();
         db.close(); // close the door, we don't live in a barn!
 
+        Intent billActivePage = new Intent(EditBillsActivity.this,
+                BillsActivity.class);
+        billActivePage.putExtra("value", "updated");
+        startActivity(billActivePage);
     } // UpdateBill()
 
     public void AddBill(View v) {
@@ -175,8 +181,19 @@ public class EditBillsActivity extends AppCompatActivity {
         }
 
         db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
-        db.execSQL("INSERT INTO tblBill(name, dueDate,amount, freq, company, status) VALUES('" + billName.getText().toString() + "', '" + billDueDate.getText().toString() + "', '" + billAmount.getText().toString() + "', '" + billFreq.getText().toString() + "','" + billCompany.getText().toString() + "', 'A')");
+        db.execSQL("INSERT INTO tblBill(name, dueDate,amount, freq, company, status) " +
+                "VALUES('" + billName.getText().toString() + "', " +
+                "'" + billDueDate.getText().toString() + "', " +
+                "'" + billAmount.getText().toString() + "', " +
+                "'" + billFreq.getText().toString() + "'," +
+                "'" + billCompany.getText().toString() + "', " +
+                "'A')");
         db.close(); // close the door, we don't live in a barn!
+
+        Intent billActivePage = new Intent(EditBillsActivity.this,
+                BillsActivity.class);
+        billActivePage.putExtra("value", "added");
+        startActivity(billActivePage);
     } // AddBill()
 
     public void ClearBill(View v) {
@@ -194,5 +211,11 @@ public class EditBillsActivity extends AppCompatActivity {
         db.execSQL("UPDATE tblBill SET status = 'C' WHERE billID = " + sellID + "");
 
         db.close(); // close the door, we don't live in a barn!
+
+        Intent billActivePage = new Intent(EditBillsActivity.this,
+                BillsActivity.class);
+        billActivePage.putExtra("value", "deleted");
+        startActivity(billActivePage);
+
     } // DeleteBill()
 }

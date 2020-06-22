@@ -11,41 +11,41 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
+        android:background="@color/tableBackground">
 
         <TextView
             android:layout_width = "0dp"
             android:layout_height = "wrap_content"
             android:layout_weight = "1"
-            android:gravity = "center"
             android:padding = "5dp"
             android:text = "@string/bill_name"
+            android:background = "@drawable/cell_shape"
+            android:textColor = "#ffffff" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:padding = "5dp"
+            android:text = "@string/bill_amount"
+            android:background = "@drawable/cell_shape"
             android:textColor = "#ffffff" />
 
         <TextView
             android:layout_width = "0dp"
             android:layout_height = "wrap_content"
             android:layout_weight = "1.5"
-            android:gravity = "center"
-            android:padding = "5dp"
-            android:text = "@string/bill_amount"
-            android:textColor = "#ffffff" />
-
-        <TextView
-            android:layout_width = "0dp"
-            android:layout_height = "wrap_content"
-            android:layout_weight = "1"
-            android:gravity = "center"
             android:padding = "5dp"
             android:text = "@string/bill_company"
+            android:background = "@drawable/cell_shape"
             android:textColor = "#ffffff" />
         <TextView
             android:layout_width = "0dp"
             android:layout_height = "wrap_content"
             android:layout_weight = "1"
-            android:gravity = "center"
             android:padding = "5dp"
             android:text = "@string/days_left"
+            android:background = "@drawable/cell_shape"
             android:textColor = "#ffffff" />
     </LinearLayout>
 

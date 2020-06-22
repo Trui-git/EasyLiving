@@ -52,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
         } // switch
     } // SetCat
 
+    @Override
+    // close app
+    public void onBackPressed() {
+        finishAffinity();
+    }
+
     private void dbSetup() {
         // create the db if it does not have an oreo cookies
         db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);

@@ -15,10 +15,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.text.SimpleDateFormat;
@@ -29,6 +31,8 @@ import java.util.Locale;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class BillsActivity extends AppCompatActivity {
 
@@ -48,6 +52,24 @@ public class BillsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bills);
+
+        Bundle extras = getIntent().getExtras();
+        View view= findViewById(R.id.title);
+        if(extras != null) {
+            String value = extras.getString("value");
+            if (value.equals("deleted")){
+                Snackbar.make(view, "Bill Deleted!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+            if (value.equals("added")){
+                Snackbar.make(view, "Bill Added!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+            if (value.equals("updated")){
+                Snackbar.make(view, "Bill Updated!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        }
 
         GetBills(); // populate our itemsNames
         ArrayAdapter<String> items_adapter =
@@ -90,21 +112,7 @@ public class BillsActivity extends AppCompatActivity {
         items_list.setAdapter((items_adapter));
         // Create a click handler
         items_list.setOnItemClickListener(mItemClicked);
-        //pay_button = findViewById(R.id.pay_button);
-        //edit_button = findViewById(R.id.edit_button);
-        //items_list.setAdapter((items_adapter));
-        // Create a click handler
-        //items_list.setOnItemClickListener(mItemClicked);
-
     } // onCreate()
-
-    @Override
-    // go back last page and refresh list view
-    public void onBackPressed() {
-        Intent mainActivePage = new Intent(BillsActivity.this,
-                MainActivity.class);
-        startActivity(mainActivePage);
-    }
 
     private AdapterView.OnItemClickListener mItemClicked =
         new AdapterView.OnItemClickListener() {
@@ -115,18 +123,27 @@ public class BillsActivity extends AppCompatActivity {
 
                 // flash button t warn user
                 Animation mAnimation = new AlphaAnimation(1, 0);
-                mAnimation.setDuration(500);
+                mAnimation.setDuration(200);
                 mAnimation.setInterpolator(new LinearInterpolator());
                 mAnimation.setRepeatCount(Animation.RELATIVE_TO_PARENT);
                 mAnimation.setRepeatMode(Animation.REVERSE);
                 pay_button.startAnimation(mAnimation);
                 edit_button.startAnimation(mAnimation);
+                view.startAnimation(mAnimation);
 
                 // grab the list index that was clicked
                 idx = position;
                 selID = itemIDs.get(idx);
             }
         };
+
+    @Override
+    // go back last page and refresh list view
+    public void onBackPressed() {
+        Intent mainActivePage = new Intent(BillsActivity.this,
+                MainActivity.class);
+        startActivity(mainActivePage);
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void PayBill(View v) {
