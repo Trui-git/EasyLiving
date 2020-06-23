@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
@@ -47,6 +49,15 @@ public class BillsActivity extends AppCompatActivity {
     private Button edit_button;
     private Button add_button;
     private String selID;
+    private ArrayList<Model> productList;
+    Activity activity;
+
+    private class ViewHolder {
+        TextView mName;
+        TextView mAmount;
+        TextView mCompany;
+        TextView mDayleft;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +82,16 @@ public class BillsActivity extends AppCompatActivity {
             }
         }
 
+        productList = new ArrayList<Model>();
         GetBills(); // populate our itemsNames
-        ArrayAdapter<String> items_adapter =
-        new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, itemNames){
+
+        //ArrayAdapter<String> items_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemNames){
+        ArrayAdapter<Model> items_adapter = new ArrayAdapter<Model>(this, android.R.layout.simple_list_item_1, productList){
+
             @Override
             public View getView(int position, View convertView, @NonNull ViewGroup parent){
                 // Get the current item from ListView
+                /*
                 View view = super.getView(position,convertView,parent);
                 TextView item = (TextView)view;
                 if(position %2 == 1) {
@@ -101,7 +115,31 @@ public class BillsActivity extends AppCompatActivity {
                     // Change the item text size
                     item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
                 }
-                return view;
+                */
+                ViewHolder holder;
+                activity = (Activity) this.getContext();
+                LayoutInflater inflater = activity.getLayoutInflater();
+
+                if (convertView == null) {
+                    convertView = inflater.inflate(R.layout.listview_row, null);
+                    holder = new ViewHolder();
+                    holder.mName = (TextView) convertView.findViewById(R.id.sName);
+                    holder.mAmount = (TextView) convertView.findViewById(R.id.sAmount);
+                    holder.mCompany = (TextView) convertView.findViewById(R.id.sCompany);
+                    holder.mDayleft = (TextView) convertView.findViewById(R.id.sDayleft);
+                    convertView.setTag(holder);
+                } else {
+                    holder = (ViewHolder) convertView.getTag();
+                }
+
+                Model listItem = productList.get(position);
+                holder.mName.setText(listItem.getName().toString());
+                holder.mAmount.setText(listItem.getAmount().toString());
+                holder.mCompany.setText(listItem.getCompany().toString());
+                holder.mDayleft.setText(listItem.getDaysLeft().toString());
+
+                //return view;
+                return convertView;
             }
         };
         pay_button = findViewById(R.id.pay_button);
@@ -208,7 +246,11 @@ public class BillsActivity extends AppCompatActivity {
                         c.getString(2) + " | " +
                         c.getString(3) + " | " +
                         c.getString(4);
-                    itemNames.add(curItem);
+
+                    Model item = new Model(c.getString(1), c.getString(2), c.getString(3), c.getString(4));
+                    productList.add(item);
+
+                    //itemNames.add(curItem);
                     itemIDs.add(c.getString(0));
                     itemAmounts.add(c.getString(2));
                 }while(c.moveToNext());

@@ -7,4 +7,5 @@
     <color name="colorRed">#E72522</color>
     <color name="colorCell">#BCA5A5</color>
     <color name="tableBackground">#5E6BF1</color>
+    <color name="tableContentBackground">#E8F4F4</color>
 </resources>
