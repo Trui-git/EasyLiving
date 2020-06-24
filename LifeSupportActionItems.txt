@@ -1,0 +1,28 @@
+
+// Things we(as in you guys & gals) need to solve for tomorrow 👍
+
+// 1)
+// Listing the bills due within 2 weeks
+
+    SELECT * 
+    FROM tblBill 
+    WHERE Cast((JulianDay(dueDate) - date('now')) As Integer) < 15
+
+
+    // due date 31st
+    // current date 16th
+    // 15 days - it should NOT list this bill
+
+    // due date 18th
+    // current 16th
+    // 2 days - it should list this bill
+
+
+// 2) 
+// ListView formating - font size, color, center, background colors,
+    background colors odd/even etc...
+    selected item vs unselected item(s)
+
+
+// 3)
+// Read the code Read the code Read the code Read the code Read the code!
