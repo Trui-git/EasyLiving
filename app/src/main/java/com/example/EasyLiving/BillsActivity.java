@@ -3,6 +3,7 @@ package com.example.EasyLiving;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +15,8 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
@@ -95,32 +98,6 @@ public class BillsActivity extends AppCompatActivity {
             @Override
             public View getView(int position, View convertView, @NonNull ViewGroup parent){
                 // Get the current item from ListView
-                /*
-                View view = super.getView(position,convertView,parent);
-                TextView item = (TextView)view;
-                if(position %2 == 1) {
-                    // Set a background color for ListView regular row/item
-                    view.setBackgroundColor(Color.parseColor("#FFCAC4C4"));
-                    // Set the item text color
-                    item.setTextColor(Color.parseColor("#FF211E1E"));
-                    // Set the item text style to bold
-                    item.setTypeface(item.getTypeface(), Typeface.BOLD);
-                    // Change the item text size
-                    item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
-                }
-                else {
-                    // Set the background color for alternate row/item
-                    view.setBackgroundColor(Color.parseColor("#FFFAF7F7"));
-                    // Set the item text color
-                    //item.setTextColor(Color.parseColor("#FFD17057"));
-                    item.setTextColor(Color.parseColor("#FF211E1E"));
-                    // Set the item text style to bold
-                    item.setTypeface(item.getTypeface(), Typeface.BOLD);
-                    // Change the item text size
-                    item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
-                }
-                */
-
                 ViewHolder holder;
                 activity = (Activity) this.getContext();
                 LayoutInflater inflater = activity.getLayoutInflater();
@@ -196,6 +173,32 @@ public class BillsActivity extends AppCompatActivity {
         };
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.bill_history) {
+            Intent historyActivity =
+                    new Intent(BillsActivity.this,
+                            HistoryActivity.class);
+            startActivity(historyActivity);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     // go back last page and refresh list view
     public void onBackPressed() {
         Intent mainActivePage = new Intent(BillsActivity.this,
@@ -256,7 +259,7 @@ public class BillsActivity extends AppCompatActivity {
                 "            CAST(julianday(dueDate) - julianday('now') AS INTEGER) || ' days' AS 'Days until Due:'\n" +
                 "        FROM tblBill\n" +
                 "        WHERE\n" +
-                "             status = 'A'", null);
+                "             julianday(dueDate) - julianday('now') < 30 AND status = 'A'", null);
         // julianday(dueDate) - julianday('now') < 150 AND
 
         if(c != null) {
@@ -279,15 +282,4 @@ public class BillsActivity extends AppCompatActivity {
         }
 
     } // GetBills()
-
-    /*
-        SELECT
-            name AS 'Bill:',
-            dueDate AS 'Due Date:',
-            company AS 'Company:',
-            CAST(julianday(dueDate) - julianday('now') AS INTEGER) AS 'Days until Due:'
-        FROM tblBill
-        WHERE
-            julianday(dueDate) - julianday('now') < 15
-     */
 }

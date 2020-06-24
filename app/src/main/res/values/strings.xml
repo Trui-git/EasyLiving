@@ -13,7 +13,8 @@
     <string name="pay_now">Pay Now</string>
     <string name="add_item">Add Item</string>
     <string name="days_left">Days Left</string>
-
+    <string name="bill_history">Bill History</string>
+    <string name="paid_day">Paid Day</string>
 
 
 </resources>

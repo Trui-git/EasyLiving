@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/history_row_view"
+    android:layout_width = "match_parent"
+    android:layout_height = "wrap_content"
+    android:background = "@color/tableContentBackground" >
+
+    <TextView
+        android:id = "@+id/sName_history"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/bill_name"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sAmount_history"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/bill_amount"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sCompany_history"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/bill_company"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sDay_history"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/paid_day"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+</LinearLayout>
