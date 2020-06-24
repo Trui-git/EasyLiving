@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/appBackground">
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginStart="@dimen/margin"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
         android:columnCount="4"
-        android:rowCount="1">
+        android:rowCount="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/bills_button"
@@ -22,8 +23,10 @@
             android:layout_row="0"
             android:layout_column="0"
             android:layout_margin="@dimen/small_margin"
+            android:contentDescription="@string/bill"
             android:onClick="SetCat"
             android:src="@drawable/bills_icon" />
+
         <ImageView
             android:id="@+id/cart_button"
             android:layout_width="@dimen/half_button"
@@ -31,8 +34,10 @@
             android:layout_row="0"
             android:layout_column="1"
             android:layout_margin="@dimen/small_margin"
+            android:contentDescription="@string/cart"
             android:onClick="SetCat"
             android:src="@drawable/cart_icon" />
+
         <ImageView
             android:id="@+id/todo_button"
             android:layout_width="@dimen/half_button"
@@ -40,8 +45,10 @@
             android:layout_row="0"
             android:layout_column="2"
             android:layout_margin="@dimen/small_margin"
+            android:contentDescription="@string/todo"
             android:onClick="SetCat"
             android:src="@drawable/todo_icon" />
+
         <ImageView
             android:id="@+id/medicine_button"
             android:layout_width="@dimen/half_button"
@@ -49,8 +56,9 @@
             android:layout_row="0"
             android:layout_column="3"
             android:layout_margin="@dimen/small_margin"
+            android:contentDescription="@string/medicine"
             android:onClick="SetCat"
             android:src="@drawable/medicine_icon" />
 
     </GridLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

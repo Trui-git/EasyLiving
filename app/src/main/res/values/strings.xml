@@ -15,6 +15,11 @@
     <string name="days_left">Days Left</string>
     <string name="bill_history">Bill History</string>
     <string name="paid_day">Paid Day</string>
+    <string name="todo">Todo</string>
+    <string name="medicine">Medicine</string>
+    <string name="cart">Cart</string>
+    <string name="bill">Bill</string>
+    <string name="under_construction">Under Construction!</string>
 
 
 </resources>
