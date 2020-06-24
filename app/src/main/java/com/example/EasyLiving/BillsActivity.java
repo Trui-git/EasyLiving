@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -32,6 +33,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import android.os.Bundle;
+import android.widget.Magnifier;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -58,6 +60,8 @@ public class BillsActivity extends AppCompatActivity {
         TextView mCompany;
         TextView mDayleft;
     }
+
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +120,7 @@ public class BillsActivity extends AppCompatActivity {
                     item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
                 }
                 */
+
                 ViewHolder holder;
                 activity = (Activity) this.getContext();
                 LayoutInflater inflater = activity.getLayoutInflater();
@@ -138,7 +143,22 @@ public class BillsActivity extends AppCompatActivity {
                 holder.mCompany.setText(listItem.getCompany().toString());
                 holder.mDayleft.setText(listItem.getDaysLeft().toString());
 
-                //return view;
+                /*
+                // Set the item text style to bold
+                holder.mName.setTypeface(null, Typeface.BOLD);
+                holder.mAmount.setTypeface(null, Typeface.BOLD);
+                holder.mCompany.setTypeface(null, Typeface.BOLD);
+                holder.mDayleft.setTypeface(null, Typeface.BOLD);
+                */
+                if(position %2 == 0) {
+                    convertView.setBackgroundColor(Color.parseColor("#FFBDCEEC"));
+                }
+                else {
+                    convertView.setBackgroundColor(Color.parseColor("#FFE8F4F4"));
+                    // use background default color
+                }
+
+                    //return view;
                 return convertView;
             }
         };
