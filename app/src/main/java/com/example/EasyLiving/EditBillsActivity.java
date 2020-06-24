@@ -127,18 +127,6 @@ public class EditBillsActivity extends AppCompatActivity {
 
     public void UpdateBill(View v) {
 
-        /*
-            UPDATE tblBill
-            SET
-                name = billName.getText(),
-                dueDate = billDueDate.getText(),
-                amount = billAmount.getText(),
-                freq = billFreq.getText(),
-                company = billCompany.getText()
-            WHERE
-	            billID = sellID
-         */
-
         db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
         db.execSQL("UPDATE tblBill SET " +
                 "name = '" + billName.getText().toString() + "', " +
