@@ -208,33 +208,36 @@
 
             <Button
                 android:id="@+id/update_button"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:theme="@style/CartButtonTheme"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:onClick="UpdateCart"
-                android:text="@string/update_cart" />
+                android:text="@string/update_cart"
+                tools:ignore="ButtonStyle" />
             <Button
                 android:id="@+id/clear_button"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:theme="@style/CartButtonTheme"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/clear_cart"
-                android:onClick="ClearCart"/>
+                android:onClick="ClearCart"
+                tools:ignore="ButtonStyle" />
             <Button
                 android:id="@+id/delete_button"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:theme="@style/CartButtonTheme"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/delete_cart_item"
-
-                android:onClick="DeleteCartItem"/>
+                android:onClick="DeleteCartItem"
+                tools:ignore="ButtonStyle" />
             <Button
                 android:id="@+id/add_cart_button"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:theme="@style/CartButtonTheme"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:text="@string/add_cart_item"
-                android:onClick="AddCartItems"/>
+                android:onClick="AddCartItems"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
