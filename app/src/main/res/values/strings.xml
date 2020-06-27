@@ -21,5 +21,21 @@
     <string name="bill">Bill</string>
     <string name="under_construction">Under Construction!</string>
 
+    <string name="category">Category</string>
+    <string name="cartItemName">Name</string>
+    <string name="createdDate">Date</string>
+    <string name="createdNewDate">Create Date</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+    <string name="grocery">Grocery</string>
+    <string name="daysPassed">Days Passed</string>
+    <string name="cart_history">Cart History</string>
+    <string name="update_cart">Update Item</string>
+    <string name="clear_cart">Clear Item</string>
+    <string name="delete_cart_item">Delete Item</string>
+    <string name="add_cart_item">Add Item</string>
+
+
+
 
 </resources>

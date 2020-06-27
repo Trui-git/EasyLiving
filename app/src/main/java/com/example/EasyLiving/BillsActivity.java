@@ -3,7 +3,6 @@ package com.example.EasyLiving;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,9 +10,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,12 +18,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.text.SimpleDateFormat;
@@ -36,7 +31,6 @@ import java.util.Date;
 import java.util.Locale;
 
 import android.os.Bundle;
-import android.widget.Magnifier;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -103,7 +97,7 @@ public class BillsActivity extends AppCompatActivity {
                 LayoutInflater inflater = activity.getLayoutInflater();
 
                 if (convertView == null) {
-                    convertView = inflater.inflate(R.layout.listview_row, null);
+                    convertView = inflater.inflate(R.layout.listview_row_bill, null);
                     holder = new ViewHolder();
                     holder.mName = (TextView) convertView.findViewById(R.id.sName);
                     holder.mAmount = (TextView) convertView.findViewById(R.id.sAmount);

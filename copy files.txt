@@ -4,7 +4,7 @@
 
 2. open terminal in Android Studio, and go D:\Web\Android\platform-tools
 
-3. ADB push e:/lifeSupportDB /mnt/sdcard
+3. ADB push e:/lifeSupportDB /mnt/sdcard1
 
 4. In device file explore of Android studio, delet data/data/com.example.EasyLiving/databases/lifeSupportDB
 
@@ -12,5 +12,5 @@
 run-as com.example.EasyLiving
 cd /databases
 
-6. cp /storage/sdcard1/lifeSupport .
+6. cp /storage/sdcard1/lifeSupportDB .
 

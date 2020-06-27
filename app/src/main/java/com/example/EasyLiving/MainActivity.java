@@ -73,6 +73,18 @@ public class MainActivity extends AppCompatActivity {
                 "(billHistoryID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "amount NUMERIC, payedDate VARCHAR, billID INTEGER)");
 
+        // create cart table if it does not exist
+        db.execSQL("CREATE TABLE IF NOT EXISTS tblCart" +
+                "(cartID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "category VARCHAR, name VARCHAR, createdDate VARCHAR, quantity NUMERIC," +
+                "price NUMERIC, grocery VARCHAR, status CHAR(1))");
+
+        // create cart history table if it does not exist
+        db.execSQL("CREATE TABLE IF NOT EXISTS tblCartHistory" +
+                "(cartHistoryID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "price NUMERIC, payedDate VARCHAR, cartID INTEGER)");
+
+
 /*
         // name, dueDate, amount, freq, company, lastPayed, status
         // insert some test bills

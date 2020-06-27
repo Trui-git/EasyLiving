@@ -13,8 +13,17 @@
         <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
     </style>
 
+    <style name="CartButtonTheme">
+        <!-- Set your desired cart button color here. -->
+        <item name="colorAccent">@color/cartButtonBackground</item>
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
 
 </resources>

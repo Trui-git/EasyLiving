@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/cart_row_view"
+    android:layout_width = "match_parent"
+    android:layout_height = "wrap_content"
+    android:background = "@color/cartTableContentBackground" >
+
+    <TextView
+        android:id = "@+id/sCategorye"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/category"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sCart_item_name"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/cartItemName"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sCreatedDate"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1.25"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/createdDate"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sQuantity"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/quantity"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sPrice"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "0.75"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/price"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sGrocery"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/grocery"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sDaysPassed"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/daysPassed"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+</LinearLayout>
