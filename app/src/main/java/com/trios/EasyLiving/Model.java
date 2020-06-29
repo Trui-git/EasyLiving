@@ -1,4 +1,4 @@
-package com.example.EasyLiving;
+package com.trios.EasyLiving;
 
 public class Model {
 

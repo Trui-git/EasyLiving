@@ -1,4 +1,4 @@
-package com.example.EasyLiving;
+package com.trios.EasyLiving;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -29,7 +29,6 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;

@@ -1,4 +1,4 @@
-package com.example.EasyLiving;
+package com.trios.EasyLiving;
 
 import androidx.appcompat.app.AppCompatActivity;
 

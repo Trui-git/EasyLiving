@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.EasyLiving"
+        applicationId "com.trios.EasyLiving"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1

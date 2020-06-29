@@ -1,14 +1,15 @@
-package com.example.EasyLiving;
+package com.trios.EasyLiving;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MedicineActivity extends AppCompatActivity {
+public class TodoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_medicine);
+        setContentView(R.layout.activity_todo);
     }
+    /* test */
 }
