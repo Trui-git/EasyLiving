@@ -270,6 +270,6 @@ public class CartActivity extends AppCompatActivity {
             c.close();
         }
 
-    } // GetBills()
+    } // GetCartItems()
 
 }

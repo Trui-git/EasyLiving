@@ -84,19 +84,15 @@ public class MainActivity extends AppCompatActivity {
                 "(cartHistoryID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "price NUMERIC, payedDate VARCHAR, cartID INTEGER)");
 
+        // create todo table if it does not exist
+        db.execSQL("CREATE TABLE IF NOT EXISTS tblTodo" +
+                "(todoID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "task VARCHAR, todoWhere VARCHAR, time VARCHAR," +
+                "status CHAR(1))");
 
-/*
-        // name, dueDate, amount, freq, company, lastPayed, status
-        // insert some test bills
-        db.execSQL("INSERT INTO tblBill VALUES(?1, 'Internet', '2020-07-01', 105.99, " +
-                "'weekly', 'Rogers', 'A')");
-        db.execSQL("INSERT INTO tblBill VALUES(?1, 'Cellphone', '2020-07-01', 45.99, " +
-                "'weekly', 'Telus', 'A')");
-        db.execSQL("INSERT INTO tblBill VALUES(?1, 'Jellybean Club', '2020-06-25', 399.99, " +
-                "'weekly', 'JellyBeanClub.com', 'A')");
-
-*/
-
-
+        // create todo history table if it does not exist
+        db.execSQL("CREATE TABLE IF NOT EXISTS tblTodoHistory" +
+                "(todoHistoryID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "completTime VARCHAR, todoID INTEGER)");
     }
 }

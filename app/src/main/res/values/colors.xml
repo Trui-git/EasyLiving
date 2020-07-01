@@ -7,8 +7,11 @@
     <color name="colorRed">#E72522</color>
     <color name="colorCell">#BCA5A5</color>
     <color name="tableBackground">#5E6BF1</color>
-    <color name="cartTableBackground">#F5738F</color>
     <color name="tableContentBackground">#E8F4F4</color>
+    <color name="cartTableBackground">#F5738F</color>
     <color name="cartTableContentBackground">#F0CCD9</color>
     <color name="cartButtonBackground">#A98BF3</color>
+    <color name="todoTableBackground">#48874B</color>
+    <color name="todoTableContentBackground">#D7F6D7</color>
+    <color name="todoButtonBackground">#5E6BF1</color>
 </resources>

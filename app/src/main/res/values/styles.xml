@@ -8,7 +8,7 @@
     </style>
     <!-- Custom button theme. -->
     <style name="ButtonTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Set your desired button color here. -->
+        <!-- Set your desired bill button color here. -->
         <item name="colorAccent">@color/colorAccent</item>
         <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
     </style>
@@ -16,6 +16,12 @@
     <style name="CartButtonTheme">
         <!-- Set your desired cart button color here. -->
         <item name="colorAccent">@color/cartButtonBackground</item>
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+    </style>
+
+    <style name="TodoButtonTheme">
+        <!-- Set your desired todo button color here. -->
+        <item name="colorAccent">@color/todoButtonBackground</item>
         <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
     </style>
 

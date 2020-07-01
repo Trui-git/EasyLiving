@@ -35,7 +35,17 @@
     <string name="delete_cart_item">Delete Item</string>
     <string name="add_cart_item">Add Item</string>
 
-
-
+    <string name="todo_Task">Task</string>
+    <string name="todo_where">Where</string>
+    <string name="todo_time">Time</string>
+    <string name="todo_update">Update Task</string>
+    <string name="todo_clear">Clear Task</string>
+    <string name="todo_delete">Delete Task</string>
+    <string name="todo_add_task">Add Task</string>
+    <string name="todo_complete">Complete Task</string>
+    <string name="todo_edit_item">Edit Task</string>
+    <string name="todo_add_item">Add Task</string>
+    <string name="todo_history">Todo History</string>
+    <string name="todo_time_complete">Complete</string>
 
 </resources>

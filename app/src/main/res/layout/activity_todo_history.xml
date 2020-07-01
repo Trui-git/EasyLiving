@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TodoHistoryActivity">
+
+    <LinearLayout
+        android:id="@+id/cart_title_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/todoTableBackground">
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:padding = "5dp"
+            android:text = "@string/todo_Task"
+            android:background = "@drawable/cell_shape"
+            android:textColor = "#ffffff" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:padding = "5dp"
+            android:text = "@string/todo_where"
+            android:background = "@drawable/cell_shape"
+            android:textColor = "#ffffff" />
+
+        <TextView
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "1"
+            android:padding = "5dp"
+            android:text = "@string/todo_time"
+            android:background = "@drawable/cell_shape"
+            android:textColor = "#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/todo_history_list"
+            android:textAlignment="center">
+
+        </ListView>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/todo_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/todoButtonBackground"
+        app:srcCompat="@drawable/home_todo" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

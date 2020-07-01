@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditTodoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/todo_Task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/todo_Task"
+                android:ems="10"
+
+                android:hint="@string/todo_Task"
+                android:inputType="textAutoCorrect|textMultiLine|text"
+                android:labelFor="@+id/editText"
+                android:maxLength="500"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/todo_task_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/todo_Task"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/todo_where"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:hint="@string/todo_where"
+                android:autofillHints="@string/todo_where"/>
+
+            <TextView
+                android:id="@+id/todo_where_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/todo_where" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/todo_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="date"
+
+                android:hint="@string/todo_time"
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:autofillHints="@string/todo_time"/>
+
+            <TextView
+                android:id="@+id/todo_time_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/todo_time" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/todo_update_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:onClick="UpdateTodo"
+                android:text="@string/todo_update"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:id="@+id/todo_clear_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/todo_clear"
+                android:onClick="ClearTodo"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:id="@+id/todo_delete_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/todo_delete"
+                android:onClick="DeleteTodo"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:id="@+id/todo_add_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/todo_add_task"
+                android:onClick="AddTodo"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

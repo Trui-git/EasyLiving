@@ -10,15 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.trios.EasyLiving.EditCartActivity"></activity>
-        <activity android:name="com.trios.EasyLiving.CartHistoryActivity" />
-        <activity android:name="com.trios.EasyLiving.HistoryActivity" />
-        <activity android:name="com.trios.EasyLiving.EditBillsActivity" />
-        <activity android:name="com.trios.EasyLiving.MedicineActivity" />
-        <activity android:name="com.trios.EasyLiving.TodoActivity" />
-        <activity android:name="com.trios.EasyLiving.CartActivity" />
-        <activity android:name="com.trios.EasyLiving.BillsActivity" />
-        <activity android:name="com.trios.EasyLiving.MainActivity">
+        <activity android:name=".TodoHistoryActivity"></activity>
+        <activity android:name=".EditTodoActivity" />
+        <activity android:name=".EditCartActivity" />
+        <activity android:name=".CartHistoryActivity" />
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".EditBillsActivity" />
+        <activity android:name=".MedicineActivity" />
+        <activity android:name=".TodoActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".BillsActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
