@@ -30,7 +30,7 @@ public class TodoHistoryActivity extends AppCompatActivity {
     private class ViewHolder {
         TextView mTask;
         TextView mPlace;
-        TextView mTime;
+        TextView mDate;
     }
     private Context context;
 
@@ -64,7 +64,7 @@ public class TodoHistoryActivity extends AppCompatActivity {
                     holder = new TodoHistoryActivity.ViewHolder();
                     holder.mTask = (TextView) convertView.findViewById(R.id.sTask_history);
                     holder.mPlace = (TextView) convertView.findViewById(R.id.sWhere_history);
-                    holder.mTime = (TextView) convertView.findViewById(R.id.sTime_history);
+                    holder.mDate = (TextView) convertView.findViewById(R.id.sDate_history);
                     convertView.setTag(holder);
                 } else {
                     holder = (TodoHistoryActivity.ViewHolder) convertView.getTag();
@@ -73,7 +73,7 @@ public class TodoHistoryActivity extends AppCompatActivity {
                 Model listItem = todoHistoryList.get(position);
                 holder.mTask.setText(listItem.getTask().toString());
                 holder.mPlace.setText(listItem.getWhere().toString());
-                holder.mTime.setText(listItem.getTime().toString());
+                holder.mDate.setText(listItem.getDate().toString());
 
                 if (position % 2 == 0) {
                     convertView.setBackgroundColor(Color.parseColor("#FFD7F6D7"));

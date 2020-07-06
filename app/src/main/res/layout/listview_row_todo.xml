@@ -30,14 +30,14 @@
         android:singleLine = "true" />
 
     <TextView
-        android:id = "@+id/sTime"
+        android:id = "@+id/sDate"
         android:layout_width = "0dp"
         android:layout_height = "match_parent"
         android:layout_weight = "1"
         android:background = "@drawable/cell_shape"
         android:ellipsize = "end"
         android:padding = "5dp"
-        android:text = "@string/todo_time"
+        android:text = "@string/todo_date"
         android:textAlignment="textStart"
         android:singleLine = "true" />
 

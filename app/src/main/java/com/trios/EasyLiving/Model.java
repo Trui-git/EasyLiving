@@ -20,6 +20,7 @@ public class Model {
     // properties for todo
     private String task;
     private String where;
+    private String todo_date;
     private String time;
 
     // model for bill
@@ -42,10 +43,11 @@ public class Model {
     }
 
     // model for todo
-    public Model(String task, String where, String time) {
+    public Model(String task, String where, String todo_date) {
         this.task = task;
         this.where = where;
-        this.time = time;
+        this.todo_date = todo_date;
+        //this.time = time;
     }
 
     // methodes for bill
@@ -92,7 +94,8 @@ public class Model {
     public String getWhere() {
         return where;
     }
-    public String getTime() {
-        return time;
+    public String getDate() {
+        return todo_date;
     }
+    //public String getTime() { return time; }
 }

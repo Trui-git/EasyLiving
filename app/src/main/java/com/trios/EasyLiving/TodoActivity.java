@@ -53,7 +53,8 @@ public class TodoActivity extends AppCompatActivity {
     private class ViewHolder {
         TextView mTask;
         TextView mPlace;
-        TextView mTime;
+        TextView mDate;
+        //TextView mTime;
     }
 
     private Context context;
@@ -98,7 +99,7 @@ public class TodoActivity extends AppCompatActivity {
                     holder = new TodoActivity.ViewHolder();
                     holder.mTask = (TextView) convertView.findViewById(R.id.sTask);
                     holder.mPlace = (TextView) convertView.findViewById(R.id.sWhere);
-                    holder.mTime = (TextView) convertView.findViewById(R.id.sTime);
+                    holder.mDate = (TextView) convertView.findViewById(R.id.sDate);
                     convertView.setTag(holder);
                 } else {
                     holder = (TodoActivity.ViewHolder) convertView.getTag();
@@ -107,7 +108,7 @@ public class TodoActivity extends AppCompatActivity {
                 Model listItem = todoList.get(position);
                 holder.mTask.setText(listItem.getTask().toString());
                 holder.mPlace.setText(listItem.getWhere().toString());
-                holder.mTime.setText(listItem.getTime().toString());
+                holder.mDate.setText(listItem.getDate().toString());
 
                 if(position %2 == 0) {
                     convertView.setBackgroundColor(Color.parseColor("#FFD7F6D7"));

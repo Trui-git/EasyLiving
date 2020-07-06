@@ -38,6 +38,7 @@
     <string name="todo_Task">Task</string>
     <string name="todo_where">Where</string>
     <string name="todo_time">Time</string>
+    <string name="todo_date">Date</string>
     <string name="todo_update">Update Task</string>
     <string name="todo_clear">Clear Task</string>
     <string name="todo_delete">Delete Task</string>
