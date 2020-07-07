@@ -195,7 +195,7 @@ public class TodoActivity extends AppCompatActivity {
 
         Date date = new Date();
         //String theDate = new SimpleDateFormat("yyyy-mm-dd").format(date);
-        String theDate = new SimpleDateFormat("yyyy-MM-dd",  Locale.US).format(date);
+        String theDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",  Locale.US).format(date);
 
         // first open db!
         db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);

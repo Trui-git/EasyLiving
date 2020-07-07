@@ -3,6 +3,7 @@ package com.trios.EasyLiving;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -26,6 +28,7 @@ public class EditTodoActivity extends AppCompatActivity {
     private EditText todoTask;
     private EditText todoWhere;
     private EditText todoDate;
+    private EditText todoTime;
     Calendar myCalendar;
 
     @Override
@@ -52,6 +55,7 @@ public class EditTodoActivity extends AppCompatActivity {
         todoTask = findViewById(R.id.todo_Task);
         todoWhere = findViewById(R.id.todo_where);
         todoDate = findViewById(R.id.todo_date);
+        todoTime = findViewById(R.id.todo_time);
 
         myCalendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -63,7 +67,7 @@ public class EditTodoActivity extends AppCompatActivity {
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
+                updateDateLabel();
             }
 
         };
@@ -80,6 +84,30 @@ public class EditTodoActivity extends AppCompatActivity {
             }
         });
 
+        final TimePickerDialog.OnTimeSetListener time = new TimePickerDialog.OnTimeSetListener() {
+
+            @Override
+            public void onTimeSet(TimePicker view, int hour, int minute) {
+                // TODO Auto-generated method stub
+                myCalendar.set(Calendar.HOUR, hour);
+                myCalendar.set(Calendar.MINUTE, minute);
+                updateTimeLabel();
+            }
+
+        };
+
+        todoTime.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new TimePickerDialog(EditTodoActivity.this, time,
+                        myCalendar.get(Calendar.HOUR),
+                        myCalendar.get(Calendar.MINUTE),
+                        true).show();
+            }
+        });
+        //updateLabel();
         GetTodo(sellID);
     }
     @Override
@@ -90,10 +118,16 @@ public class EditTodoActivity extends AppCompatActivity {
         startActivity(todoActivePage);
     }
 
-    private void updateLabel() {
+    private void updateDateLabel() {
         String myFormat = "yyyy-MM-dd"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         todoDate.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private void updateTimeLabel() {
+        String timeFormat = "HH:mm:ss"; //In which you need put here
+        SimpleDateFormat sdfTime = new SimpleDateFormat(timeFormat, Locale.US);
+        todoTime.setText(sdfTime.format(myCalendar.getTime()));
     }
 
     public void GetTodo(String id) {
@@ -105,7 +139,9 @@ public class EditTodoActivity extends AppCompatActivity {
                 do{
                     todoTask.setText(c.getString(1));
                     todoWhere.setText(c.getString(2));
-                    todoDate.setText(c.getString(3));
+                    String[] splitStr = c.getString(3).split("\\s+");
+                    todoDate.setText(splitStr[0]);
+                    todoTime.setText(splitStr[1]);
                 }while(c.moveToNext());
             }
             c.close();
@@ -124,6 +160,10 @@ public class EditTodoActivity extends AppCompatActivity {
             return;
         }
         if (TextUtils.isEmpty(todoDate.getText().toString())) {
+            Toast.makeText(this, "todo Date is empty!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(todoTime.getText().toString())) {
             Toast.makeText(this, "todo time is empty!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -132,7 +172,7 @@ public class EditTodoActivity extends AppCompatActivity {
         db.execSQL("UPDATE tblTodo SET " +
                 "task = '" + todoTask.getText().toString() + "', " +
                 "todoWhere = '" + todoWhere.getText().toString() + "', " +
-                "time = '" + todoDate.getText().toString() + "' " +
+                "time = '" + todoDate.getText().toString() + ' ' + todoTime.getText().toString() + "' " +
                 "WHERE todoID = " + sellID + "");
 
         db.close(); // close the door, we don't live in a barn!
@@ -154,6 +194,11 @@ public class EditTodoActivity extends AppCompatActivity {
             return;
         }
         if (TextUtils.isEmpty(todoDate.getText().toString())) {
+            Toast.makeText(this, "todo date is empty!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(todoTime.getText().toString())) {
             Toast.makeText(this, "todo time is empty!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -162,7 +207,7 @@ public class EditTodoActivity extends AppCompatActivity {
         db.execSQL("INSERT INTO tblTodo(task, todoWhere, time, status) " +
                 "VALUES('" + todoTask.getText().toString() + "', " +
                 "'" + todoWhere.getText().toString() + "', " +
-                "'" + todoDate.getText().toString() + "', " +
+                "'" + todoDate.getText().toString() + ' ' + todoTime.getText().toString() + "', " +
                 "'A')");
         db.close(); // close the door, we don't live in a barn!
 
@@ -178,6 +223,7 @@ public class EditTodoActivity extends AppCompatActivity {
         todoTask.getText().clear();
         todoWhere.getText().clear();
         todoDate.getText().clear();
+        todoTime.getText().clear();
     } // ClearTodo()
 
     public void DeleteTodo(View v) {

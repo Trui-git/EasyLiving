@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 "(todoID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "task VARCHAR, todoWhere VARCHAR, time VARCHAR," +
                 "status CHAR(1))");
-        //db.execSQL("ALTER TABLE tblTodo ADD COLUMN time2 VARCHAR");
+        // time is not right name, should be date, add time2 for the right time column
 
         // create todo history table if it does not exist
         db.execSQL("CREATE TABLE IF NOT EXISTS tblTodoHistory" +
