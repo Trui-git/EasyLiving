@@ -207,7 +207,7 @@ public class TodoActivity extends AppCompatActivity {
 
         //LocalDate newDate = LocalDate.now().plusMonths(1);
         //db.execSQL("UPDATE tblBill SET dueDate = '" + newDate + "' WHERE billID = " + itemIDs.get(idx) + ")");
-        //db.execSQL("UPDATE tblTodo SET dueDate = '" + newDate + "' WHERE billID = " + itemIDs.get(idx) + "");
+        db.execSQL("UPDATE tblTodo SET status = 'C' WHERE todoID = " + itemIDs.get(idx) + "");
 
         db.close(); // close the door, we don't live in a barn!
 

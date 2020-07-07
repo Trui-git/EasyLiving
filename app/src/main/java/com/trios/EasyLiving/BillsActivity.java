@@ -27,6 +27,7 @@ import android.widget.ListView;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -214,9 +215,14 @@ public class BillsActivity extends AppCompatActivity {
         // insert record into tblBillHistory - id, amount, payedDate, billID
         db.execSQL("INSERT INTO tblBillHistory VALUES(?1," + itemAmounts.get(idx) + ",'" + theDate + "', " + itemIDs.get(idx) + ")");
 
-        LocalDate newDate = LocalDate.now().plusMonths(1);
+        //LocalDate newDate = LocalDate.now().plusMonths(1);
+        // LocalDate only supported API 26 and above.
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, 1);
+        String newDate = new SimpleDateFormat("yyyy-MM-dd",  Locale.US).format(cal.getTime());
         //db.execSQL("UPDATE tblBill SET dueDate = '" + newDate + "' WHERE billID = " + itemIDs.get(idx) + ")");
         db.execSQL("UPDATE tblBill SET dueDate = '" + newDate + "' WHERE billID = " + itemIDs.get(idx) + "");
+        //db.execSQL("UPDATE tblBill SET status = 'C' WHERE billID = " + itemIDs.get(idx) + "");
 
         db.close(); // close the door, we don't live in a barn!
 
