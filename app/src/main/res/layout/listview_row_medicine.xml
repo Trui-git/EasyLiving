@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/medicine_row_view"
+    android:layout_width = "match_parent"
+    android:layout_height = "wrap_content"
+    android:background = "@color/todoTableContentBackground" >
+
+    <TextView
+        android:id="@+id/sMedicineName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/cell_shape"
+        android:ellipsize="end"
+        android:padding="5dp"
+        android:singleLine="false"
+        android:text="@string/todo_Task"
+        android:textAlignment="textStart" />
+
+    <TextView
+        android:id = "@+id/sPurpose"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "0.8"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/todo_where"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+    <TextView
+        android:id = "@+id/sInstructions"
+        android:layout_width = "0dp"
+        android:layout_height = "match_parent"
+        android:layout_weight = "1.2"
+        android:background = "@drawable/cell_shape"
+        android:ellipsize = "end"
+        android:padding = "5dp"
+        android:text = "@string/todo_date"
+        android:textAlignment="textStart"
+        android:singleLine = "true" />
+
+</LinearLayout>

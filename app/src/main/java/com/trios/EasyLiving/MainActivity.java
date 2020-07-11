@@ -95,5 +95,10 @@ public class MainActivity extends AppCompatActivity {
         db.execSQL("CREATE TABLE IF NOT EXISTS tblTodoHistory" +
                 "(todoHistoryID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "completTime VARCHAR, todoID INTEGER)");
+
+        // create medicine table if it does not exist
+        db.execSQL("CREATE TABLE IF NOT EXISTS tblMedicine" +
+                "(medicineID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "name VARCHAR, purpose VARCHAR, instructions VARCHAR)");
     }
 }

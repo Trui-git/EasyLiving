@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TodoHistoryActivity"></activity>
+        <activity android:name=".EditMedicineActivity"></activity>
+        <activity android:name=".TodoHistoryActivity" />
         <activity android:name=".EditTodoActivity" />
         <activity android:name=".EditCartActivity" />
         <activity android:name=".CartHistoryActivity" />

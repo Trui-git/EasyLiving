@@ -14,4 +14,5 @@
     <color name="todoTableBackground">#48874B</color>
     <color name="todoTableContentBackground">#D7F6D7</color>
     <color name="todoButtonBackground">#5E6BF1</color>
+    <color name="colorPrimaryMedicine">#CC6109</color>
 </resources>
