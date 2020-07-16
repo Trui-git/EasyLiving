@@ -113,7 +113,7 @@ public class MedicineActivity extends AppCompatActivity {
                 holder.mInstructions.setText(listItem.getInstructions().toString());
 
                 if(position %2 == 0) {
-                    convertView.setBackgroundColor(Color.parseColor("#FFD7F6D7"));
+                    convertView.setBackgroundColor(Color.parseColor("#FFD9B79C"));
                 }
                 else {
                     convertView.setBackgroundColor(Color.parseColor("#FFE8F4F4"));
@@ -169,30 +169,22 @@ public class MedicineActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void CompleteMedicine(View v) {
 
-        //Date date = new Date();
-        //String theDate = new SimpleDateFormat("yyyy-mm-dd").format(date);
-        //String theDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",  Locale.US).format(date);
-
         // first open db!
-        //db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
+        db = this.openOrCreateDatabase(DB_NAME, MODE_PRIVATE, null);
         //String amount = itemAmounts.get(idx);
         //Double convertedAmount = new Double(amount);
 
-        // insert record into tblBillHistory - id, amount, payedDate, billID
-        //db.execSQL("INSERT INTO tblTodoHistory VALUES(?1,'" + theDate + "', " + itemIDs.get(idx) + ")");
+        db.execSQL("DELETE FROM tblMedicine\n" +
+                "WHERE medicineID = " + itemIDs.get(idx));
 
-        //LocalDate newDate = LocalDate.now().plusMonths(1);
-        //db.execSQL("UPDATE tblBill SET dueDate = '" + newDate + "' WHERE billID = " + itemIDs.get(idx) + ")");
-        //db.execSQL("UPDATE tblMedicine SET status = 'C' WHERE medicineID = " + itemIDs.get(idx) + "");
+        db.close(); // close the door, we don't live in a barn!
 
-        //db.close(); // close the door, we don't live in a barn!
-
-        // update todopage
+        // update medicinepage
         Intent MedicinePage = new Intent(MedicineActivity.this,
                 MedicineActivity.class);
         startActivity(MedicinePage);
 
-    } // CompleteMedicine()*/
+    } // CompleteMedicine()
 
     public void EditMedicine(View v) {
         String idx = selID;

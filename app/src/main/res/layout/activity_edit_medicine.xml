@@ -1,9 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditMedicineActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/medicine_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/todo_Task"
+                android:ems="10"
+
+                android:hint="@string/medicine_name"
+                android:inputType="textAutoCorrect|textMultiLine|text"
+                android:labelFor="@+id/editText"
+                android:maxLength="500"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/medicine_name_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/medicine_name"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/medicine_purpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:hint="@string/medicine_purpose"
+                android:autofillHints="@string/medicine_purpose"/>
+
+            <TextView
+                android:id="@+id/medicine_purpose_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/medicine_purpose" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <EditText
+                android:id="@+id/medicine_instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/medicine_instructions"
+                android:ems="10"
+
+                android:hint="@string/medicine_instructions"
+                android:inputType="text"
+                android:labelFor="@+id/editText"
+                android:maxLength="100"
+                android:paddingStart="100dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:id="@+id/medicine_instructions_prefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/padding_start"
+                android:paddingEnd="@dimen/padding_start"
+                android:text="@string/medicine_instructions" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/medicine_update_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:onClick="UpdateMedicine"
+                android:text="@string/medicine_update"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:id="@+id/medicine_clear_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/medicine_clear"
+                android:onClick="ClearMedicine"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:id="@+id/medicine_delete_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/medicine_delete"
+                android:onClick="DeleteMedicine"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:id="@+id/medicine_add_button"
+                android:theme="@style/TodoButtonTheme"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="@string/medicine_add"
+                android:onClick="AddMedicine"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

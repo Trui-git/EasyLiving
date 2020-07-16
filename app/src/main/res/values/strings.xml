@@ -54,5 +54,12 @@
     <string name="medicine_add_item">Add Medicine</string>
     <string name="medicine_edit_item">Edit Medicine</string>
     <string name="medicine_complete_item">Complete Task</string>
+    <string name="medicine_name">Name</string>
+    <string name="medicine_update">Update</string>
+    <string name="medicine_clear">Clear</string>
+    <string name="medicine_add">Add</string>
+    <string name="medicine_delete">Delete</string>
+
+
 
 </resources>
